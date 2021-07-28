@@ -20,10 +20,17 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MainContentComponent } from './main-content/main-content.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { AddCourseComponent } from './add-course/add-course.component';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -48,7 +55,7 @@ import { AddCourseComponent } from './add-course/add-course.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    FullCalendarModule
 
   ],
   providers: [],
