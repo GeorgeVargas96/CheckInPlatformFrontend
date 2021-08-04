@@ -1,0 +1,55 @@
+<form class="form-container">
+  <div class="centered">
+      <mat-card>
+        <!-- Header -->
+        <div class="field-container">
+          <mat-card-header>
+              <mat-card-title>Create an event</mat-card-title>
+          </mat-card-header>
+        </div>
+        <!-- Body -->
+        <mat-card-content>
+          <div class="field-container">
+
+            <!-- Select Class -->
+            <br>
+            <h2>Select a class</h2>
+            <div>
+              <mat-form-field appearance="fill" class="half-width">
+                <mat-label>Select Class</mat-label>
+                <mat-select formControlName="year" id="select-class">
+                  <mat-option *ngFor="let class of classes">{{class}}</mat-option>
+              </mat-select>
+              </mat-form-field>
+            </div>
+            <h2>Select a classroom</h2>
+            <div>
+              <mat-form-field appearance="fill" class="half-width">
+                <mat-label>Select Classroom</mat-label>
+                <mat-select formControlName="year" id="select-classroom">
+                  <mat-option *ngFor="let classroom of classrooms">{{classroom}}</mat-option>
+              </mat-select>
+              </mat-form-field>
+            </div>
+
+            <h2>Start</h2>
+            <div>
+              <input mat-input type="datetime-local" name="" id="start-time">
+            </div>
+
+            <h2>End</h2>
+            <div>
+              <input type="datetime-local" name="" id="end-time">
+            </div>
+
+          </div>
+        </mat-card-content>
+        <div class="field-container">
+          <mat-card-actions align="start">
+              <button mat-raised-button color="primary">Create</button>
+
+          </mat-card-actions>
+      </div>
+    </mat-card>
+  </div>
+</form>
