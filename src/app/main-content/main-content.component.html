@@ -1,5 +1,50 @@
-<div class="container">
-  
-  <full-calendar [options]="calendarOptions"></full-calendar>
+<div class="content">
 
+  <h1 class="current-week-title"> {{currentWeek[0]| date}} - {{currentWeek[6]| date}}</h1>
+  <div class="calendar-container">
+    <div class="header">
+      <ul class="days">
+        <li *ngFor="let day of currentWeek">
+          <p>{{day |date: 'EE - dd'}}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="timeslots-container">
+      <ul class="hours">
+        <li *ngFor="let hours of hourGrid">
+          <p>{{hours}}:00</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="event-container">
+
+
+      <div class="slot slot-1">
+        <div class="event-status"></div>
+        <span>ADS</span>
+      </div>
+
+      <div class="slot slot-2">
+        <div class="event-status"></div>
+        <span>Algebra</span>
+      </div>
+
+      <div class="slot slot-3">
+        <div class="event-status"></div>
+        <span>English</span>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="add-button">
+    <br>
+    <a class="nav-link active" href="add-event" mat-raised-button color="primary">Create an event</a>
+  </div>
 </div>
+
+
+

@@ -25,6 +25,8 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { AddEventComponent } from './add-event/add-event.component';
+
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -38,7 +40,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NavbarComponent,
     AddUserComponent,
     MainContentComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,
