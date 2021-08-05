@@ -26,6 +26,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { AddEventComponent } from './add-event/add-event.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -58,7 +59,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
-    FullCalendarModule
+    FullCalendarModule,
+    HttpClientModule
 
   ],
   providers: [],
