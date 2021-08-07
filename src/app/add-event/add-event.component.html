@@ -1,4 +1,4 @@
-<form class="form-container">
+<form [formGroup]="eventForm" class="form-container" (ngSubmit)="addEvent(eventForm)">
   <div class="centered">
       <mat-card>
         <!-- Header -->
@@ -13,33 +13,41 @@
 
             <!-- Select Class -->
             <br>
-            <h2>Select a class</h2>
+            <h2>Select a course</h2>
             <div>
               <mat-form-field appearance="fill" class="half-width">
-                <mat-label>Select Class</mat-label>
-                <mat-select formControlName="year" id="select-class">
-                  <mat-option *ngFor="let class of classes">{{class}}</mat-option>
+                <mat-label>Course</mat-label>
+                <mat-select formControlName="course" id="select-class">
+                  <div *ngFor="let course of courses">
+                    <mat-option value="{{ course?.id }}">
+                      {{course?.name}}
+                    </mat-option>
+                  </div>
               </mat-select>
               </mat-form-field>
             </div>
             <h2>Select a classroom</h2>
             <div>
               <mat-form-field appearance="fill" class="half-width">
-                <mat-label>Select Classroom</mat-label>
-                <mat-select formControlName="year" id="select-classroom">
-                  <mat-option *ngFor="let classroom of classrooms">{{classroom}}</mat-option>
+                <mat-label>Classroom</mat-label>
+                <mat-select formControlName="classroom" id="select-classroom">
+                  <div *ngFor="let classroom of classrooms">
+                    <mat-option value="{{ classroom?.id }}">
+                      {{classroom?.name}}
+                    </mat-option>
+                  </div>
               </mat-select>
               </mat-form-field>
             </div>
 
             <h2>Start</h2>
             <div>
-              <input mat-input type="datetime-local" name="" id="start-time">
+              <input mat-input type="datetime-local" formControlName="startTime" id="start-time">
             </div>
 
             <h2>End</h2>
             <div>
-              <input type="datetime-local" name="" id="end-time">
+              <input type="datetime-local" formControlName="endTime" id="end-time">
             </div>
 
           </div>
