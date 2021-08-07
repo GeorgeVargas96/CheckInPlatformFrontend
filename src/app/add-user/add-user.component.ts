@@ -2,8 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
-import { User } from '../user';
+import { UserService } from '../services/user/user.service';
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-add-user',
@@ -26,7 +26,7 @@ export class AddUserComponent implements OnInit {
     role:['']
   })
 
-  addUser(userProfileForm: FormGroup): void{
+  public addUser(userProfileForm: FormGroup): void{
     this.userService.addUser(userProfileForm.value).subscribe(
       (response: User) => {
         console.log(response);

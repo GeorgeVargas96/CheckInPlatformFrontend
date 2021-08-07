@@ -27,6 +27,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { AddEventComponent } from './add-event/add-event.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddClassroomComponent } from './add-classroom/add-classroom.component';
 
 
 
@@ -42,7 +43,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AddUserComponent,
     MainContentComponent,
     AddCourseComponent,
-    AddEventComponent
+    AddEventComponent,
+    AddClassroomComponent
   ],
   imports: [
     BrowserModule,

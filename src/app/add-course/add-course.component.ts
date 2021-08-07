@@ -1,5 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Course } from '../classes/course';
+import { CourseService } from '../services/course/course.service';
 
 @Component({
   selector: 'app-add-course',
@@ -8,23 +13,31 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AddCourseComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder){}
-
+  constructor(
+    private formBuilder:FormBuilder,
+    private courseService: CourseService,
+    private router: Router){}
 
   courseForm = this.formBuilder.group({
     
     name:[''],
     year:[''],
     section:[''],
-    teacher:[''],
-    classroom:['']
+    // teacher:[''],
   })
 
-  saveForm(){
-    console.log(this.courseForm.value)
+  public addCourse(courseForm: FormGroup): void{
+    this.courseService.addCourse(courseForm.value).subscribe(
+      (response: Course) => {
+        console.log(response);
+        this.router.navigateByUrl('');
+      },
+      (error: HttpErrorResponse) =>{
+        alert(error.message);
+      }
+    );
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
 }
