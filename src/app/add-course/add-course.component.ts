@@ -30,7 +30,7 @@ export class AddCourseComponent implements OnInit {
     this.courseService.addCourse(courseForm.value).subscribe(
       (response: Course) => {
         console.log(response);
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('courses');
       },
       (error: HttpErrorResponse) =>{
         alert(error.message);

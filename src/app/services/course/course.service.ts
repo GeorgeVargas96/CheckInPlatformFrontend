@@ -22,4 +22,8 @@ export class CourseService {
     return this.http.get<CourseDTO[]>(`${this.apiUrl}/course/all`);
   }
 
+  public deleteCourse(courseId: number): Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/course/${courseId}`);
+  } 
+
 }
