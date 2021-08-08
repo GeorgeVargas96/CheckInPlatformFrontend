@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component'
 import { AddClassroomComponent } from './add-classroom/add-classroom.component';
+import { AddFeatureComponent } from './add-feature/add-feature.component';
+import { CoursesComponent } from './courses/courses.component';
 
 const routes: Routes = [
 
@@ -14,7 +16,10 @@ const routes: Routes = [
 
   },
   {
-    path: 'course', component: AddCourseComponent
+    path: 'add-course', component: AddCourseComponent
+  },
+  {
+    path: 'courses', component: CoursesComponent
   },
   {
     path: '', component: MainContentComponent
@@ -24,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'classroom', component: AddClassroomComponent
+  },
+  {
+    path: 'feature', component: AddFeatureComponent
   }
 ];
 

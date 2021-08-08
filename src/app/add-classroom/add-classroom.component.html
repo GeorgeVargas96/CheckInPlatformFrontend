@@ -34,6 +34,18 @@
                   <input matInput formControlName="capacity">
                 </mat-form-field>
               </div>
+
+              <!-- Features -->
+              <div>
+                <mat-form-field appearance="fill" class="half-width">
+                  <mat-label>Features</mat-label>
+                  <mat-select [(value)]="selectedFeatures" formControlName="features" multiple>
+                    <mat-option *ngFor="let feature of features" value="{{ feature?.name }}">
+                      {{feature?.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
   
             </div>
           </mat-card-content>

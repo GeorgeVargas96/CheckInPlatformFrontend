@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Classroom } from '../classes/classroom';
+import { Feature } from '../classes/feature';
 import { ClassroomService } from '../services/classroom/classroom.service';
+import { FeatureService } from '../services/feature/feature.service';
 
 @Component({
   selector: 'app-add-classroom',
@@ -12,9 +14,13 @@ import { ClassroomService } from '../services/classroom/classroom.service';
 })
 export class AddClassroomComponent implements OnInit {
 
+  features: Feature[] | undefined;
+  selectedFeatures: string[] | undefined;
+
   constructor(
     private formBuilder: FormBuilder,
     private classroomService: ClassroomService,
+    private featureService: FeatureService,
     private router: Router
   ) { }
 
@@ -23,6 +29,8 @@ export class AddClassroomComponent implements OnInit {
     name:[''],
     location:[''],
     capacity:['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+    features:[[]],
+    otherFeature:['']
   })
 
   public addClassroom(classroomForm: FormGroup): void{
@@ -37,9 +45,22 @@ export class AddClassroomComponent implements OnInit {
         }
       );
     }
+
+  }
+
+  public getFeatures(): void{
+    this.featureService.getFeatures().subscribe(
+      (response: Feature[]) => {
+        this.features = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
   }
 
   ngOnInit(): void {
+    this.getFeatures();
   }
 
 }

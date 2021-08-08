@@ -28,7 +28,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { AddEventComponent } from './add-event/add-event.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddClassroomComponent } from './add-classroom/add-classroom.component';
-
+import { AddFeatureComponent } from './add-feature/add-feature.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -44,7 +45,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MainContentComponent,
     AddCourseComponent,
     AddEventComponent,
-    AddClassroomComponent
+    AddClassroomComponent,
+    AddFeatureComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -63,8 +66,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatGridListModule,
     FullCalendarModule,
     HttpClientModule
-
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
