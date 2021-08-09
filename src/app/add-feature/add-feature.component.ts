@@ -18,14 +18,15 @@ export class AddFeatureComponent implements OnInit {
     private router: Router
   ) { }
 
-  featureForm = this.formBuilder.group({
+  public featureForm = this.formBuilder.group({
     name:['']
-  })
+  });
 
   public addFeature(featureForm: FormGroup): void{
     this.featureService.addFeature(featureForm.value).subscribe(
       (response: Feature) => {
         console.log(response);
+        this.router.navigateByUrl('features');
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

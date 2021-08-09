@@ -14,8 +14,8 @@ import { FeatureService } from '../services/feature/feature.service';
 })
 export class AddClassroomComponent implements OnInit {
 
-  features: Feature[] | undefined;
-  selectedFeatures: string[] | undefined;
+  public features: Feature[] | undefined;
+  public selectedFeatures: string[] | undefined;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,16 +29,15 @@ export class AddClassroomComponent implements OnInit {
     name:[''],
     location:[''],
     capacity:['', [Validators.required, Validators.pattern("^[0-9]*$")]],
-    features:[[]],
-    otherFeature:['']
-  })
+    features:[[]]
+    })
 
   public addClassroom(classroomForm: FormGroup): void{
     if (classroomForm.valid){
       this.classroomService.addClassroom(classroomForm.value).subscribe(
         (response: Classroom) => {
           console.log(response);
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('classrooms');
         },
         (error: HttpErrorResponse) =>{
           alert(error.message);

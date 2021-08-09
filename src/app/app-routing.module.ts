@@ -7,6 +7,11 @@ import { AddUserComponent } from './add-user/add-user.component'
 import { AddClassroomComponent } from './add-classroom/add-classroom.component';
 import { AddFeatureComponent } from './add-feature/add-feature.component';
 import { CoursesComponent } from './courses/courses.component';
+import { ClassroomsComponent } from './classrooms/classrooms.component';
+import { FeaturesComponent } from './features/features.component';
+import { EditFeatureComponent } from './edit-feature/edit-feature.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
+import { EditClassroomComponent } from './edit-classroom/edit-classroom.component';
 
 const routes: Routes = [
 
@@ -16,10 +21,13 @@ const routes: Routes = [
 
   },
   {
+    path: 'courses', component: CoursesComponent
+  },
+  {
     path: 'add-course', component: AddCourseComponent
   },
   {
-    path: 'courses', component: CoursesComponent
+    path: 'edit-course', component: EditCourseComponent
   },
   {
     path: '', component: MainContentComponent
@@ -28,10 +36,22 @@ const routes: Routes = [
     path: 'add-event', component: AddEventComponent
   },
   {
-    path: 'classroom', component: AddClassroomComponent
+    path: 'classrooms', component: ClassroomsComponent
   },
   {
-    path: 'feature', component: AddFeatureComponent
+    path: 'add-classroom', component: AddClassroomComponent
+  },
+  {
+    path: 'edit-classroom', component: EditClassroomComponent
+  },
+  {
+    path: 'features', component: FeaturesComponent
+  },
+  {
+    path: 'add-feature', component: AddFeatureComponent
+  },
+  {
+    path: 'edit-feature', component: EditFeatureComponent
   }
 ];
 
