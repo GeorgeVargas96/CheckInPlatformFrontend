@@ -44,6 +44,11 @@ export class CoursesComponent implements OnInit {
     );
   }
 
+  public onEditCourse(courseId: number): void{
+    this.courseService.setEditCourseId(courseId);
+    this.router.navigateByUrl('edit-course');
+  }
+
   ngOnInit(): void {
     this.getCourses();
   }

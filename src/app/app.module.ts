@@ -30,6 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddClassroomComponent } from './add-classroom/add-classroom.component';
 import { AddFeatureComponent } from './add-feature/add-feature.component';
 import { CoursesComponent } from './courses/courses.component';
+import { ClassroomsComponent } from './classrooms/classrooms.component';
+import { FeaturesComponent } from './features/features.component';
+import { EditFeatureComponent } from './edit-feature/edit-feature.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
+import { EditClassroomComponent } from './edit-classroom/edit-classroom.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -47,7 +52,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AddEventComponent,
     AddClassroomComponent,
     AddFeatureComponent,
-    CoursesComponent
+    CoursesComponent,
+    ClassroomsComponent,
+    FeaturesComponent,
+    EditFeatureComponent,
+    EditCourseComponent,
+    EditClassroomComponent
   ],
   imports: [
     BrowserModule,
