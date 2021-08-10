@@ -11,9 +11,9 @@
         <li class="row" *ngFor="let course of courses">
             <p>{{ course?.name }}</p>
             <div class="buttons">
-                <button type="button" class="btn btn-info">Details</button>
+                <button type="button" class="btn btn-info" (click)="onDetailsCourse(course.name, course.year, course.section)">Details</button>
                 <button type="button" class="btn btn-primary" (click)="onEditCourse(course.id)">Edit</button>
-                <button type="button" class="btn btn-danger" (click)="onDeleteCourse(course.id)">Delete</button>
+                <button type="button" class="btn btn-danger" (click)="openConfirmationDialog(course.id, course.name)">Delete</button>
             </div>
         </li>
     </ul>

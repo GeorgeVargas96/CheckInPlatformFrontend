@@ -44,7 +44,7 @@ export class EditClassroomComponent implements OnInit {
     );
   }
 
-  public getClassroom(): void{
+  public getEditClassroom(): void{
     if(this.editClassroomId !== undefined){
       this.classroomService.getClassroomById(this.editClassroomId).subscribe(
         (response: Classroom) => {
@@ -98,7 +98,7 @@ export class EditClassroomComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEditClassroomId();
-    this.getClassroom();
+    this.getEditClassroom();
     this.getEditClassroomFeatures();
     this.getFeatures();
   }
