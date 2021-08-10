@@ -1,9 +1,11 @@
 <div class="content">
   <div class="calendar table-responsive">
-    <h1 class="current-week-title"> {{currentWeek[0]| date}} - {{currentWeek[6]| date}}</h1>
-    <table class="table table-striped table-bordered">
+    <div class="header">
+      <h1 class="current-week-title"> {{currentWeek[0]| date}} - {{currentWeek[6]| date}}</h1>
+    </div>
+      <table class="table">
       <thead>
-        <tr>
+        <tr class="days-color-grid">
           <th>Monday</th>
           <th>Tuesday	</th>
           <th>Wednesday</th>
@@ -16,16 +18,28 @@
       </thead>
       <tbody *ngFor="let event of events" >
         <tr>
-          <td><b *ngIf="event.day=='Monday'">{{event.course.name}}</b></td>
-          <td><b *ngIf="event.day=='Tuesday'">{{event.course.name}}</b></td>
-          <td><b *ngIf="event.day=='Wednesday'">{{event.course.name}}</b></td>
-          <td><b *ngIf="event.day=='Thursday'">{{event.course.name}}</b></td>
-          <td><b *ngIf="event.day=='Friday'">{{event.course.name}}</b></td>
-          <td><b *ngIf="event.day=='Saturday'">{{event.course.name}}</b></td>
-          <td><b *ngIf="event.day=='Sunday'">{{event.course.name}}</b></td>
+          <td><b *ngIf="event.day=='Monday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
+
+          <td><b *ngIf="event.day=='Tuesday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
+
+          <td><b *ngIf="event.day=='Wednesday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
+
+          <td><b *ngIf="event.day=='Thursday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
+
+          <td><b *ngIf="event.day=='Friday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
+
+          <td><b *ngIf="event.day=='Saturday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
+
+          <td><b *ngIf="event.day=='Sunday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
         </tr>
     </tbody>
     </table>
   </div>
-
 </div>

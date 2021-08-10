@@ -13,9 +13,10 @@
 }
 
 .current-week-title{
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 600;
   text-align: center;
+  color: rgba(24, 21, 21, 0.836);
 }
 .days{
   text-align: center;
@@ -31,7 +32,52 @@
   justify-content: center;
   margin-top: 40px;
   }
+
   tr{
     text-align: center;
   }
+
+  .event{
+    position: relative;
+    background-color: lightslategrey;
+    height: 50px;
+    padding-top: 13px;
+    font-size: 14px;
+    border-radius: 10px;
+    z-index: 5;
+    color: black;
+    margin-top: 0px;
+    outline: none;
+    overflow: hidden;
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+    border-collapse: collapse;
+
+  }
+  .header{
+    font-size: inherit;
+    grid-area: header;
+    min-height: 30px;
+    vertical-align: baseline;
+    padding-top: 10px;
+    background-image: linear-gradient(to left, rgb(255, 255, 255) 1%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 100%),
+                    linear-gradient(to left, rgb(255, 255, 255) 28%, rgba(25, 26, 26, 0.562) 50%, rgb(255, 255, 255) 72%);
+    background-size: 100% 3px;
+    background-position: 0% 0%, 0% 100%;
+    background-repeat: no-repeat;
+    line-height: 50px;
+    text-align: center;
+
+  }
+
+  .days-color-grid{
+    background-color: lightslategray;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    border: 1px black;
+    border-radius: 5px;
+  }
+
+
 
