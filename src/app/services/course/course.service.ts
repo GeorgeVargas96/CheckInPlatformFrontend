@@ -20,8 +20,8 @@ export class CourseService {
     return this.http.post<Course>(`${this.apiUrl}/course`, course);
   }
 
-  public getCourses(): Observable<CourseDTO[]>{
-    return this.http.get<CourseDTO[]>(`${this.apiUrl}/course/all`);
+  public getCourses(): Observable<Course[]>{
+    return this.http.get<Course[]>(`${this.apiUrl}/course/all`);
   }
 
   public deleteCourse(courseId: number): Observable<void>{

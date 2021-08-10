@@ -27,26 +27,21 @@ export class MainContentComponent implements OnInit {
       section: "IR"
     }
   ]
-  classrooms: Classroom[]= [{
-    id: 1,
-    name: "032",
-    location: "Et 1",
-    capacity: 32
-  }]
+
 
   events: Event[] =[{
     id: 1,
     course: this.courses[0],
-    classroom: this.classrooms[0],
+    classroom: 1,
     day: "Monday"
   },
   {
     id: 2,
     course: this.courses[1],
-    classroom: this.classrooms[0],
+    classroom: 2,
     day: "Sunday"
   },
-  
+
   ];
 
   constructor() { }

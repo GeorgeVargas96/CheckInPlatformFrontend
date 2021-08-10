@@ -12,6 +12,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
@@ -23,6 +24,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { AddCourseComponent } from './add-course/add-course.component';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 import { AddEventComponent } from './add-event/add-event.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddClassroomComponent } from './add-classroom/add-classroom.component';
@@ -33,7 +36,14 @@ import { FeaturesComponent } from './features/features.component';
 import { EditFeatureComponent } from './edit-feature/edit-feature.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { EditClassroomComponent } from './edit-classroom/edit-classroom.component';
+import { CourseDetailsComponent } from './course-details/course-details.component';
+import { ClassroomDetailsComponent } from './classroom-details/classroom-details.component';
 
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -51,8 +61,8 @@ import { EditClassroomComponent } from './edit-classroom/edit-classroom.componen
     EditFeatureComponent,
     EditCourseComponent,
     EditClassroomComponent,
-
-
+    CourseDetailsComponent,
+    ClassroomDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -71,10 +81,7 @@ import { EditClassroomComponent } from './edit-classroom/edit-classroom.componen
     MatGridListModule,
     FullCalendarModule,
     HttpClientModule,
-
-
-
-
+    MatDialogModule
   ],
 
   providers: [],

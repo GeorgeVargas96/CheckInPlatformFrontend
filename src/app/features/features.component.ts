@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Feature } from '../classes/feature';
 import { FeatureService } from '../services/feature/feature.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-features',
@@ -47,6 +48,27 @@ export class FeaturesComponent implements OnInit {
 
   public goToAddFeature(){
     this.router.navigateByUrl('add-feature');
+  }
+
+  public openConfirmationDialog(featureId: number, featureName: string): void{
+    Swal.fire({
+      title: 'Are you sure?',
+      text: featureName + " will be removed from all classrooms",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.onDeleteFeature(featureId);
+        Swal.fire(
+          'Deleted!',
+          featureName + ' has been deleted',
+          'success'
+        )
+      }
+    })
   }
 
   ngOnInit(): void {

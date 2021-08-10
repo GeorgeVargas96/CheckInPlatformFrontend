@@ -34,7 +34,7 @@ export class EditCourseComponent implements OnInit {
     );
   }
 
-  public getCourse(): void{
+  public getEditCourse(): void{
     if (this.editCourseId !== undefined){
       this.courseService.getCourseById(this.editCourseId).subscribe(
         (response: Course) => {
@@ -65,7 +65,7 @@ export class EditCourseComponent implements OnInit {
   
   ngOnInit(): void {
     this.getEditCourseId();
-    this.getCourse();
+    this.getEditCourse();
   }
 
 }

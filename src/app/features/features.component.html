@@ -13,7 +13,7 @@
             <div class="buttons">
                 <button type="button" class="btn btn-info">Details</button>
                 <button type="button" class="btn btn-primary" (click)="onEditFeature(feature.id)">Edit</button>
-                <button type="button" class="btn btn-danger" (click)="onDeleteFeature(feature.id)">Delete</button>
+                <button type="button" class="btn btn-danger" (click)="openConfirmationDialog(feature.id, feature.name)">Delete</button>
             </div>
         </li>
     </ul>
