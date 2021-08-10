@@ -31,7 +31,7 @@
                 <mat-select formControlName="classroom" id="select-classroom">
                   <div *ngFor="let classroom of classrooms">
                     <mat-option value="{{ classroom?.id }}">
-                      {{classroom?.name}}
+                      {{classroom?.name}}  (capacity: {{classroom?.capacity}})
                     </mat-option>
                   </div>
               </mat-select>

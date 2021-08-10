@@ -30,7 +30,7 @@ export class EditFeatureComponent implements OnInit {
     );
   }
 
-  public getFeature(): void{
+  public getEditFeature(): void{
     if(this.editFeatureId !== undefined){
       this.featureService.getFeatueById(this.editFeatureId).subscribe(
         (response: Feature) => {
@@ -60,7 +60,7 @@ export class EditFeatureComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEditFeatureId();
-    this.getFeature();
+    this.getEditFeature();
   }
 
 
