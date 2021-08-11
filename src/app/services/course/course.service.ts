@@ -35,7 +35,7 @@ export class CourseService {
   public updateCourse(course: Course, courseId: number): Observable<Course>{
     return this.http.put<Course>(`${this.apiUrl}/course/${courseId}`, course);
   }
-  
+
   public setEditCourseId(courseId: number){
     this.editCourseId.next(courseId);
   }

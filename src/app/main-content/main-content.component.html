@@ -1,50 +1,48 @@
 <div class="content">
-
-  <h1 class="current-week-title"> {{currentWeek[0]| date}} - {{currentWeek[6]| date}}</h1>
-  <div class="calendar-container">
+  <div class="calendar table-responsive">
     <div class="header">
-      <ul class="days">
-        <li *ngFor="let day of currentWeek">
-          <p>{{day |date: 'EE - dd'}}</p>
-        </li>
-      </ul>
+      <h1 class="current-week-title"> {{currentWeek[0]| date}} - {{currentWeek[6]| date}}</h1>
     </div>
+      <table class="table">
+      <thead>
+        <tr class="days-color-grid">
+          <th>Monday</th>
+          <th>Tuesday	</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let event of events" >
+        <tr>
+          <td><b *ngIf="event.day=='Monday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
 
-    <div class="timeslots-container">
-      <ul class="hours">
-        <li *ngFor="let hours of hourGrid">
-          <p>{{hours}}:00</p>
-        </li>
-      </ul>
-    </div>
+          <td><b *ngIf="event.day=='Tuesday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
 
-    <div class="event-container">
+          <td><b *ngIf="event.day=='Wednesday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
 
+          <td><b *ngIf="event.day=='Thursday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
 
-      <div class="slot slot-1">
-        <div class="event-status"></div>
-        <span>ADS</span>
-      </div>
+          <td><b *ngIf="event.day=='Friday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
 
-      <div class="slot slot-2">
-        <div class="event-status"></div>
-        <span>Algebra</span>
-      </div>
+          <td><b *ngIf="event.day=='Saturday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
 
-      <div class="slot slot-3">
-        <div class="event-status"></div>
-        <span>English</span>
-      </div>
-
-    </div>
-
-
+          <td><b *ngIf="event.day=='Sunday'" (click)="showDetails(event)">
+            <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td>
+        </tr>
+    </tbody>
+    </table>
+    <button type="button" class="btn btn-dark" (click)="goToAddEvent()">Add Event</button>
+    <button type="button" class="btn btn-dark button-align-right" (click)="goToCourses()">See Courses</button>
   </div>
-  <div class="add-button">
-    <br>
-    <a class="nav-link active" href="add-event" mat-raised-button color="primary">Create an event</a>
-  </div>
+
+
 </div>
-
-
-

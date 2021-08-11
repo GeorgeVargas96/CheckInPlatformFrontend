@@ -40,6 +40,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { ClassroomDetailsComponent } from './classroom-details/classroom-details.component';
 
 
+
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
@@ -81,9 +82,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatGridListModule,
     FullCalendarModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

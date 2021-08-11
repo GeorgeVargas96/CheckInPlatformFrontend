@@ -62,7 +62,7 @@ export class EditCourseComponent implements OnInit {
     }
   }
 
-  
+
   ngOnInit(): void {
     this.getEditCourseId();
     this.getEditCourse();
