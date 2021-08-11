@@ -4,50 +4,69 @@
       <h1 class="current-week-title"> {{currentWeek[0]| date}} - {{currentWeek[6]| date}}</h1>
     </div>
       <table class="table">
+
       <thead>
         <tr class="days-color-grid">
-          <th>Monday</th>
-          <th>Tuesday	</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-          <th>Sunday</th>
+          <th class="fixed-width">Monday</th>
+          <th class="fixed-width">Tuesday	</th>
+          <th class="fixed-width"> Wednesday</th>
+          <th class="fixed-width">Thursday</th>
+          <th class="fixed-width">Friday</th>
+          <th class="fixed-width">Saturday</th>
+          <th class="fixed-width">Sunday</th>
         </tr>
       </thead>
-      <tbody *ngFor="let planner of planners" >
+
+      <tbody *ngIf="planners !== undefined; else elseBlock">
+        <tr *ngFor="let planner of planners">
+          <td class="fixed-width"><b *ngIf="planner.dayOfWeek==1" (click)="showDetails(planner)">
+            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
+            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+
+          <td class="fixed-width"><b *ngIf="planner.dayOfWeek==2" (click)="showDetails(planner)">
+            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
+            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+
+          <td class="fixed-width"><b *ngIf="planner.dayOfWeek==3" (click)="showDetails(planner)">
+            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
+            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+
+          <td class="fixed-width"><b *ngIf="planner.dayOfWeek==4" (click)="showDetails(planner)">
+            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
+            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+
+          <td class="fixed-width"><b *ngIf="planner.dayOfWeek==5" (click)="showDetails(planner)">
+            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
+            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+
+          <td class="fixed-width"><b *ngIf="planner.dayOfWeek==6" (click)="showDetails(planner)">
+            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
+            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+
+          <td class="fixed-width"><b *ngIf="planner.dayOfWeek==0" (click)="showDetails(planner)">
+            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
+            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+      </tr>
+      </tbody>
+      <ng-template #elseBlock>
         <tr>
-          <td><b *ngIf="planner.dayOfWeek==1" (click)="showDetails(planner)">
-            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
-            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+         <td colspan="7" class="fixed-width">
+          <b>
+            <h1 class="no-event">There are no scheduled events!</h1>
+          </b>
+        </td>
+      </tr>
 
-          <td><b *ngIf="planner.dayOfWeek==2" (click)="showDetails(planner)">
-            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
-            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
+      </ng-template>
 
-          <td><b *ngIf="planner.dayOfWeek==3" (click)="showDetails(planner)">
-            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
-            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
 
-          <td><b *ngIf="planner.dayOfWeek==4" (click)="showDetails(planner)">
-            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
-            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
 
-          <td><b *ngIf="planner.dayOfWeek==5" (click)="showDetails(planner)">
-            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
-            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
 
-          <td><b *ngIf="planner.dayOfWeek==6" (click)="showDetails(planner)">
-            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
-            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
-
-          <td><b *ngIf="planner.dayOfWeek==0" (click)="showDetails(planner)">
-            <!-- <div class="event">{{event.course.name}} - {{event.classroom.name}}</div></b></td> -->
-            <div class="event">{{planner.course.name}} - {{planner.classroom.name}}</div></b></td>
-        </tr>
-    </tbody>
     </table>
+
+
     <button type="button" class="btn btn-dark" (click)="goToAddEvent()">Add Event</button>
     <button type="button" class="btn btn-dark button-align-right" (click)="goToCourses()">See Courses</button>
   </div>
+<b *ngIf=""></b>
 </div>
