@@ -1,13 +1,22 @@
+import { ClassroomDTO } from "./classroomDTO";
+import { CourseDTO } from "./courseDTO";
+
 export class PlannerDTO{
     public id: number;
-    public courseId: number;
-    public classroomId: number;
+    public startTime: string;
+    public course: CourseDTO;
+    public classroom: ClassroomDTO;
+    public remainingPlaces: number;
+    public dayOfWeek: number;
 
-
-    public constructor(id: number, courseId: number, classroomId: number){
+    public constructor(id: number, startTime: string, course: CourseDTO, 
+        classroom: ClassroomDTO, remainingPlaces: number, dayOfWeek: number){
         this.id = id;
-        this.courseId = courseId;
-        this.classroomId = classroomId;
-
+        this.startTime = startTime;
+        this.course = course;
+        this.classroom = classroom;
+        this.remainingPlaces = remainingPlaces;
+        this.dayOfWeek = dayOfWeek;
     }
+    
 }

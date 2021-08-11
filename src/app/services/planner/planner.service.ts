@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Planner } from 'src/app/classes/palnner';
 import { PlannerDTO } from 'src/app/classes/plannerDTO';
 import { environment } from 'src/environments/environment';
 
@@ -16,5 +17,12 @@ export class PlannerService {
   public addPlanner(classroomId: number, courseId: number, time: string): Observable<PlannerDTO>{
     return this.http.post<PlannerDTO>(`${this.apiUrl}/planner/classroom/${classroomId}/course/${courseId}`, time);
   }
+<<<<<<< HEAD
  
+=======
+
+  public getPlanners(): Observable<PlannerDTO[]>{
+    return this.http.get<PlannerDTO[]>(`${this.apiUrl}/planner/all`);
+  }
+>>>>>>> ea393f238c86e5573a993993da4c77022800e020
 }

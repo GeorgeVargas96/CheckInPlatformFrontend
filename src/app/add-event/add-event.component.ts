@@ -31,10 +31,8 @@ export class AddEventComponent implements OnInit {
   eventForm = this.formBuilder.group({
     course:[''],
     classroom:[''],
-    date: [''],
-    startTime:[''],
-    endTime:['']
-  })
+    startTime:['']
+    })
 
   public getClassrooms(): void{
     this.classroomService.getClassrooms().subscribe(

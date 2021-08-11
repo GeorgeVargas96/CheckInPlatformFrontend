@@ -8,10 +8,10 @@
             </div>
         </div>
 
-        <li class="row" *ngFor="let classroom of classrooms">
+        <li class="classroom-row" *ngFor="let classroom of classrooms">
             <p>{{ classroom?.name }}</p>
             <div class="buttons">
-                <button type="button" class="btn btn-info" (click)="onDetailsClassroom(classroom.name, classroom.location, classroom.capacity, classroom.features)">Details</button>
+                <button type="button" class="btn btn-secondary" (click)="onDetailsClassroom(classroom.name, classroom.location, classroom.capacity, classroom.features)">Details</button>
                 <button type="button" class="btn btn-primary" (click)="onEditClassroom(classroom.id)">Edit</button>
                 <button type="button" class="btn btn-danger" (click)="openConfirmationDialog(classroom.id, classroom.name)">Delete</button>
             </div>

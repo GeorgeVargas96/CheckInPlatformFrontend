@@ -8,10 +8,9 @@
             </div>
         </div>
 
-        <li class="row" *ngFor="let feature of features">
+        <li class="feature-row" *ngFor="let feature of features">
             <p>{{ feature?.name }}</p>
             <div class="buttons">
-                <button type="button" class="btn btn-info">Details</button>
                 <button type="button" class="btn btn-primary" (click)="onEditFeature(feature.id)">Edit</button>
                 <button type="button" class="btn btn-danger" (click)="openConfirmationDialog(feature.id, feature.name)">Delete</button>
             </div>
