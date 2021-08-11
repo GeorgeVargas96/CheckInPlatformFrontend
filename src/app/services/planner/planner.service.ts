@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Planner } from 'src/app/classes/palnner';
 import { PlannerDTO } from 'src/app/classes/plannerDTO';
 import { environment } from 'src/environments/environment';
 

@@ -10,6 +10,7 @@ import { ClassroomDetailsComponent } from '../classroom-details/classroom-detail
 import { FeaturesComponent } from '../features/features.component';
 import { ClassroomService } from '../services/classroom/classroom.service';
 
+
 @Component({
   selector: 'app-classrooms',
   templateUrl: './classrooms.component.html',

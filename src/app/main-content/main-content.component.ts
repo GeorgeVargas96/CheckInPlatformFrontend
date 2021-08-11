@@ -1,6 +1,5 @@
 import { FeatureService } from './../services/feature/feature.service';
 import { Feature } from 'src/app/classes/feature';
-import { Event } from './../classes/event';
 import { Course } from './../classes/course';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,7 +11,6 @@ import {addDays} from 'date-fns';
 import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
 import { PlannerService } from '../services/planner/planner.service';
-import { Planner } from '../classes/palnner';
 import { PlannerDTO } from '../classes/plannerDTO';
 
 
@@ -76,7 +74,8 @@ export class MainContentComponent implements OnInit {
 //     }
 //   ];
 
-//   events: Event[] =[{
+//  events: Event[] =[
+//     {
 //     id: 1,
 //     course: this.courses[0],
 //     classroom: this.classrooms[0],
@@ -98,7 +97,7 @@ export class MainContentComponent implements OnInit {
 //     remainingPlaces: 32
 //   },
 
-//   ];
+//  ];
 
   public planners: PlannerDTO[] | undefined;
 
@@ -229,13 +228,13 @@ export class MainContentComponent implements OnInit {
 
       // this.getEventClassroomId();
       // this.getEventClassroom();
-  
+
       // this.getEventCourseId();
       // this.getEventClassroom();
-  
+
       // this.getEventFeatureId();
       // this.getEventFeature();
-  
+
       this.getPlanners();
     }
 
