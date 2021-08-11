@@ -39,7 +39,7 @@
 
   .event{
     position: relative;
-    background-color: lightslategrey;
+    background-color: rgb(137, 156, 175);
     height: 50px;
     padding-top: 13px;
     font-size: 14px;
@@ -71,12 +71,16 @@
   }
 
   .days-color-grid{
-    background-color: lightslategray;
+    background-color: rgb(137, 156, 175);
     font-size: 16px;
     font-weight: 500;
     position: relative;
     border: 1px black;
     border-radius: 5px;
+  }
+
+  .button-align-right{
+    float: right;
   }
 
 

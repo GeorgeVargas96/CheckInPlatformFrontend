@@ -13,7 +13,6 @@
           <th>Friday</th>
           <th>Saturday</th>
           <th>Sunday</th>
-
         </tr>
       </thead>
       <tbody *ngFor="let event of events" >
@@ -41,5 +40,9 @@
         </tr>
     </tbody>
     </table>
+    <button type="button" class="btn btn-dark" (click)="goToAddEvent()">Add Event</button>
+    <button type="button" class="btn btn-dark button-align-right" (click)="goToCourses()">See Courses</button>
   </div>
+
+
 </div>
