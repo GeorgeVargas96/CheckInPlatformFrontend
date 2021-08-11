@@ -203,7 +203,9 @@ export class MainContentComponent implements OnInit {
    showDetails(event : Event) : void {
      Swal.fire({
        showCancelButton: true,
-       showConfirmButton: false,
+       showConfirmButton: true,
+       confirmButtonText: 'Enroll',
+       confirmButtonColor: '#3085d6',
        html:
        '<h1><b>' + event.course.name + '</b></h1>' +
        'Course Name: '  + event.course.name + '<br> <br>'+
