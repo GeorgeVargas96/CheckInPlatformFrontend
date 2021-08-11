@@ -32,9 +32,8 @@ export class AddEventComponent implements OnInit {
   eventForm = this.formBuilder.group({
     course:[''],
     classroom:[''],
-    startTime:[''],
-    endTime:['']
-  })
+    startTime:['']
+    })
 
   public getClassrooms(): void{
     this.classroomService.getClassrooms().subscribe(
@@ -62,10 +61,8 @@ export class AddEventComponent implements OnInit {
     let classroomId: number = this.eventForm.get('classroom')?.value;
     let courseId: number = this.eventForm.get('course')?.value;
     let startTime: string = this.eventForm.get('startTime')?.value;
-    let endTime: string = this.eventForm.get('endTime')?.value;
-    let time: string = startTime + " : " + endTime; 
 
-    this.plannerService.addPlanner(classroomId, courseId, time).subscribe(
+    this.plannerService.addPlanner(classroomId, courseId, startTime).subscribe(
       (response: PlannerDTO) => {
         console.log(response);
         this.router.navigateByUrl('');
