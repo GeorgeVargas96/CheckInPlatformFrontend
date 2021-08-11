@@ -104,6 +104,7 @@ export class MainContentComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+
     // this.getEventClassroomId();
     // this.getEventClassroom();
 
