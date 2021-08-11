@@ -235,7 +235,7 @@ export class MainContentComponent implements OnInit {
       // this.getEventFeatureId();
       // this.getEventFeature();
 
-      // this.getPlanners();
+      this.getPlanners();
     }
 
 }
