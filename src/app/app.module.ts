@@ -23,9 +23,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AddCourseComponent } from './add-course/add-course.component';
 
-import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
+
 import { AddEventComponent } from './add-event/add-event.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddClassroomComponent } from './add-classroom/add-classroom.component';
@@ -40,11 +38,6 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { ClassroomDetailsComponent } from './classroom-details/classroom-details.component';
 
 
-
-FullCalendarModule.registerPlugins([ // register FullCalendar plugins
-  dayGridPlugin,
-  interactionPlugin
-]);
 
 @NgModule({
   declarations: [
@@ -80,7 +73,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatDatepickerModule,
     MatNativeDateModule,
     MatGridListModule,
-    FullCalendarModule,
     HttpClientModule,
     MatDialogModule,
 

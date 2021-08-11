@@ -1,7 +1,7 @@
 <div class="container">
     <ul class="responsive-table">
         <button type="button" class="btn btn-dark" (click)="goToAddClassroom()">Add Classroom</button>
-        
+
         <div *ngIf="classrooms?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
             <div class="alert alert-info" role="alert">
                 <h4 class="alert-heading">NO CLASSROOMS FOUND!</h4>
@@ -17,4 +17,5 @@
             </div>
         </li>
     </ul>
+    
 </div>

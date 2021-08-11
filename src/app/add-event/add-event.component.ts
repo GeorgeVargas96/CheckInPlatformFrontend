@@ -16,8 +16,7 @@ import { PlannerService } from '../services/planner/planner.service';
 })
 export class AddEventComponent implements OnInit {
 
-  start = new Date();
-  end = new Date();
+
 
   courses: CourseDTO[] | undefined;
   classrooms: ClassroomDTO[] | undefined;
@@ -32,6 +31,7 @@ export class AddEventComponent implements OnInit {
   eventForm = this.formBuilder.group({
     course:[''],
     classroom:[''],
+    date: [''],
     startTime:[''],
     endTime:['']
   })
@@ -58,14 +58,13 @@ export class AddEventComponent implements OnInit {
     )
   }
 
+
   public addEvent(eventForm: FormGroup): void{
     let classroomId: number = this.eventForm.get('classroom')?.value;
     let courseId: number = this.eventForm.get('course')?.value;
     let startTime: string = this.eventForm.get('startTime')?.value;
-    let endTime: string = this.eventForm.get('endTime')?.value;
-    let time: string = startTime + " : " + endTime; 
 
-    this.plannerService.addPlanner(classroomId, courseId, time).subscribe(
+    this.plannerService.addPlanner(classroomId, courseId, startTime).subscribe(
       (response: PlannerDTO) => {
         console.log(response);
         this.router.navigateByUrl('');
@@ -75,11 +74,12 @@ export class AddEventComponent implements OnInit {
       }
     );
 
-  } 
+  }
 
   ngOnInit(): void {
-    this.getClassrooms();
-    this.getCourses();
+     this.getClassrooms();
+     this.getCourses();
+
   }
 
 }
