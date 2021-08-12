@@ -100,7 +100,7 @@ export class MainContentComponent implements OnInit {
       addDays(new Date(this.date.setDate(this.firstDayOfWeek)), 6),
      ]
    }
-   
+
   public showDetails(planner : PlannerDTO) : void {
     if (this.user?.role === 'STUDENT'){
      Swal.fire({
@@ -118,7 +118,7 @@ export class MainContentComponent implements OnInit {
        'Location: '  + planner.classroom.location + '<br> <br>' +
        'Available spots: ' + planner.remainingPlaces + ' / '+ planner.classroom.capacity + '<br> <br>'
       }).then((result) => {
-        if (result.isConfirmed && this.user?.id !== undefined 
+        if (result.isConfirmed && this.user?.id !== undefined
           && planner.enrolledStudents.includes(this.user.id) === false) {
             this.assignStudentToPlanner(planner.id, this.user?.id);
             Swal.fire(
@@ -177,13 +177,9 @@ export class MainContentComponent implements OnInit {
     }
 
 
-<<<<<<< HEAD
-      // this.getPlanners();
-=======
     ngOnInit(): void {
       this.getPlanners();
       this.getUser();
->>>>>>> 33f53b7111cc8492956e91731c8dfaa1fa866ec3
     }
 
 }
