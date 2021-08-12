@@ -65,6 +65,18 @@ export class MainContentComponent implements OnInit {
     );
   }
 
+  public assignStudentToPlanner(plannerId: number, userId: number): void{
+    this.plannerService.assignStudentToPlanner(plannerId, userId).subscribe(
+      (response: PlannerDTO) => {
+        console.log(response);
+        this.getPlanners();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
   public goToAddEvent(){
     this.router.navigateByUrl('add-event');
   }
@@ -105,7 +117,24 @@ export class MainContentComponent implements OnInit {
        'Name: '  + planner.classroom.name + '<br> <br>' +
        'Location: '  + planner.classroom.location + '<br> <br>' +
        'Available spots: ' + planner.remainingPlaces + ' / '+ planner.classroom.capacity + '<br> <br>'
-      })}
+      }).then((result) => {
+        if (result.isConfirmed && this.user?.id !== undefined 
+          && planner.enrolledStudents.includes(this.user.id) === false) {
+            this.assignStudentToPlanner(planner.id, this.user?.id);
+            Swal.fire(
+              'Success!',
+              '',
+              'success'
+            )
+          }
+        else{
+          Swal.fire(
+            'You are already assigned to this event',
+            '',
+            'info'
+          )
+        }
+        })}
     else if(this.user?.role === 'TEACHER'){
       Swal.fire({
         showCancelButton: true,
