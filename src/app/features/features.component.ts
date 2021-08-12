@@ -64,7 +64,7 @@ export class FeaturesComponent implements OnInit {
         this.onDeleteFeature(featureId);
         Swal.fire(
           'Deleted!',
-          featureName + ' has been deleted',
+          featureName + ' has been removed',
           'success'
         )
       }
