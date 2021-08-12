@@ -24,4 +24,9 @@ export class PlannerService {
   public deletePlanner(plannerId: number): Observable<void>{
     return this.http.delete<void>(`${this.apiUrl}/planner/${plannerId}`);
   }
+
+  public assignStudentToPlanner(plannerId: number, studentId: number): Observable<PlannerDTO>{
+    return this.http.put<PlannerDTO>(`${this.apiUrl}/planner/${plannerId}/student/${studentId}`, '');
+  }
+
 }

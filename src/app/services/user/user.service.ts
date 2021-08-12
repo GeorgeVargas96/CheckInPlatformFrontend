@@ -18,7 +18,7 @@ export class UserService {
   userId: 3 --> TEACHER
   userId: 4 --> ADMIN
   */
-  private userId: number = 3;
+  private userId: number = 2;
 
   constructor(private http: HttpClient) { }
 
