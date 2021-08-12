@@ -13,6 +13,8 @@ import { FeaturesComponent } from './features/features.component';
 import { EditFeatureComponent } from './edit-feature/edit-feature.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { EditClassroomComponent } from './edit-classroom/edit-classroom.component';
+import { AdminGuard } from './guards/admin.guard';
+import { TeacherGuard } from './guards/teacher.guard';
 
 const routes: Routes = [
 
@@ -22,37 +24,37 @@ const routes: Routes = [
 
   },
   {
-    path: 'courses', component: CoursesComponent
+    path: 'courses', component: CoursesComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'add-course', component: AddCourseComponent
+    path: 'add-course', component: AddCourseComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'edit-course', component: EditCourseComponent
+    path: 'edit-course', component: EditCourseComponent, canActivate: [AdminGuard]
   },
   {
-    path: '', component: MainContentComponent
+    path: '', component: MainContentComponent, 
   },
   {
-    path: 'add-event', component: AddEventComponent
+    path: 'add-event', component: AddEventComponent, canActivate: [TeacherGuard]
   },
   {
-    path: 'classrooms', component: ClassroomsComponent
+    path: 'classrooms', component: ClassroomsComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'add-classroom', component: AddClassroomComponent
+    path: 'add-classroom', component: AddClassroomComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'edit-classroom', component: EditClassroomComponent
+    path: 'edit-classroom', component: EditClassroomComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'features', component: FeaturesComponent
+    path: 'features', component: FeaturesComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'add-feature', component: AddFeatureComponent
+    path: 'add-feature', component: AddFeatureComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'edit-feature', component: EditFeatureComponent
+    path: 'edit-feature', component: EditFeatureComponent, canActivate: [AdminGuard]
   }
 ];
 
