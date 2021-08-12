@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Course } from '../classes/course';
 import { CourseService } from '../services/course/course.service';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-course',
@@ -19,10 +20,10 @@ export class AddCourseComponent implements OnInit {
     private router: Router){}
 
   courseForm = this.formBuilder.group({
-    
-    name:[''],
-    year:[''],
-    section:[''],
+
+    name:['', Validators.required],
+    year:['', Validators.required],
+    section:['', Validators.required],
     // teacher:[''],
   })
 
