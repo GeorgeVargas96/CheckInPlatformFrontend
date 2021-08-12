@@ -1,24 +1,24 @@
 <header>
+  <h1>Logged in as: {{user?.role}}</h1>
   <div class="container">
-
     <img src="assets/img/logo.png" alt="logo" class ="logo-png">
     <a href="" class="logo-title-png" mat-button>Check-in-Platform</a>
 
     <nav class="nav">
       <ul>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user?.role === 'ADMIN'">
           <a class="nav-link active" href=" " mat-button>Home</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" href="user" mat-button>Add User</a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <li class="nav-item" *ngIf="user?.role === 'ADMIN'">
           <a class="nav-link active" href="courses" mat-button>Courses</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user?.role === 'ADMIN'">
           <a class="nav-link active" href="classrooms" mat-button>Classrooms</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user?.role === 'ADMIN'">
           <a class="nav-link active" href="features" mat-button>Features</a>
         </li>
       </ul>

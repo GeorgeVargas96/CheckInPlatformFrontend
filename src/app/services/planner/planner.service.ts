@@ -20,4 +20,8 @@ export class PlannerService {
   public getPlanners(): Observable<PlannerDTO[]>{
     return this.http.get<PlannerDTO[]>(`${this.apiUrl}/planner/all`);
   }
+
+  public deletePlanner(plannerId: number): Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/planner/${plannerId}`);
+  }
 }
