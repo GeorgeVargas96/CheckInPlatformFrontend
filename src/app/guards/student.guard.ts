@@ -6,18 +6,17 @@ import { Observable } from 'rxjs';
 import { User } from '../classes/user';
 import { UserService } from '../services/user/user.service';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuard implements CanActivate {
+export class StudentGuard implements CanActivate {
 
   constructor(private userService: UserService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> {
-      this.userService.checkIfUserIsAdmin().subscribe(
+      this.userService.checkIfUserIsStudent().subscribe(
         (response: boolean) => {
           if (response === false){
             this.router.navigateByUrl('');
@@ -25,7 +24,7 @@ export class AdminGuard implements CanActivate {
         }
       );
   
-    return this.userService.checkIfUserIsAdmin()
+    return this.userService.checkIfUserIsStudent()
   }
   
 }

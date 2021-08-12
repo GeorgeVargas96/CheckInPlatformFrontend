@@ -1,10 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Feature } from '../classes/feature';
 import { FeatureService } from '../services/feature/feature.service';
-import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-feature',
@@ -20,7 +19,7 @@ export class AddFeatureComponent implements OnInit {
   ) { }
 
   public featureForm = this.formBuilder.group({
-    name:['', [Validators.required, Validators.pattern("[A-Za-z]+")]]
+    name:['', [Validators.required, Validators.pattern(/^(?:[a-zA-Z0-9\s]+)?$/)]]
   });
 
   public addFeature(featureForm: FormGroup): void{

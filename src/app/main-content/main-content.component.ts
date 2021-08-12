@@ -100,7 +100,7 @@ export class MainContentComponent implements OnInit {
       addDays(new Date(this.date.setDate(this.firstDayOfWeek)), 6),
      ]
    }
-
+   
   public showDetails(planner : PlannerDTO) : void {
     if (this.user?.role === 'STUDENT'){
      Swal.fire({
@@ -118,8 +118,8 @@ export class MainContentComponent implements OnInit {
        'Location: '  + planner.classroom.location + '<br> <br>' +
        'Available spots: ' + planner.remainingPlaces + ' / '+ planner.classroom.capacity + '<br> <br>'
       }).then((result) => {
-        if (result.isConfirmed && this.user?.id !== undefined
-          && planner.enrolledStudents.includes(this.user.id) === false) {
+        if (result.isConfirmed && this.user?.id !== undefined ) {
+          if (planner.enrolledStudents.includes(this.user.id) === false){
             this.assignStudentToPlanner(planner.id, this.user?.id);
             Swal.fire(
               'Success!',
@@ -127,12 +127,13 @@ export class MainContentComponent implements OnInit {
               'success'
             )
           }
-        else{
-          Swal.fire(
-            'You are already assigned to this event',
-            '',
-            'info'
-          )
+          else if (planner.enrolledStudents.includes(this.user.id) === true){
+            Swal.fire(
+              'You are already enrolled to this event',
+              '',
+              'info'
+            )
+          }
         }
         })}
     else if(this.user?.role === 'TEACHER'){

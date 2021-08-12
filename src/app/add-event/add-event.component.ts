@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClassroomDTO } from '../classes/classroomDTO';
 import { CourseDTO } from '../classes/courseDTO';
@@ -8,8 +8,6 @@ import { PlannerDTO } from '../classes/plannerDTO';
 import { ClassroomService } from '../services/classroom/classroom.service';
 import { CourseService } from '../services/course/course.service';
 import { PlannerService } from '../services/planner/planner.service';
-import { Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-add-event',
@@ -31,8 +29,8 @@ export class AddEventComponent implements OnInit {
     private router: Router) { }
 
   eventForm = this.formBuilder.group({
-    course:['', Validators.required],
-    classroom:['', Validators.required],
+    course:['',Validators.required],
+    classroom:['',Validators.required],
     startTime:['', Validators.required]
     })
 

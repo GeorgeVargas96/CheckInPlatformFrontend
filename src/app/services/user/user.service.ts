@@ -3,6 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from '../../classes/user';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Planner } from 'src/app/classes/planner';
+import { PlannerDTO } from 'src/app/classes/plannerDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,7 @@ export class UserService {
   userId: 3 --> TEACHER
   userId: 4 --> ADMIN
   */
-  private userId: number = 2;
+  private userId: number = 3;
 
   constructor(private http: HttpClient) { }
 
@@ -40,6 +42,14 @@ export class UserService {
 
   public checkIfUserIsTeacher(): Observable<boolean>{
     return this.http.get<boolean>(`${this.apiUrl}/users/teacher/${this.userId}`);
+  }
+
+  public checkIfUserIsStudent(): Observable<boolean>{
+    return this.http.get<boolean>(`${this.apiUrl}/users/student/${this.userId}`);
+  }
+
+  public getStudentPlanners(): Observable<PlannerDTO[]>{
+    return this.http.get<PlannerDTO[]>(`${this.apiUrl}/users/${this.userId}/planners`);
   }
 
 }
