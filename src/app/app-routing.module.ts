@@ -33,7 +33,7 @@ const routes: Routes = [
     path: 'edit-course', component: EditCourseComponent, canActivate: [AdminGuard]
   },
   {
-    path: '', component: MainContentComponent, 
+    path: '', component: MainContentComponent,
   },
   {
     path: 'add-event', component: AddEventComponent, canActivate: [TeacherGuard]
