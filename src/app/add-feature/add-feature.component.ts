@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Feature } from '../classes/feature';
 import { FeatureService } from '../services/feature/feature.service';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-feature',
@@ -19,7 +20,7 @@ export class AddFeatureComponent implements OnInit {
   ) { }
 
   public featureForm = this.formBuilder.group({
-    name:['']
+    name:['', [Validators.required, Validators.pattern("[A-Za-z]+")]]
   });
 
   public addFeature(featureForm: FormGroup): void{

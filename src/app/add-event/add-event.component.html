@@ -21,7 +21,13 @@
                   <div *ngFor="let course of courses">
                     <mat-option value="{{ course?.id }}"> {{course?.name}} </mat-option>
                   </div>
+                  <div *ngIf="eventForm.controls['course'].invalid && (eventForm.controls['course'].dirty || eventForm.controls['course'].touched)">
+                    <div *ngIf="eventForm.controls['course'].errors">
+                      Location is required.
+                    </div>
+                  </div>
               </mat-select>
+
               </mat-form-field>
             </div>
             <h2>Select a classroom</h2>
@@ -34,6 +40,11 @@
                       {{classroom?.name}}  (capacity: {{classroom?.capacity}})
                     </mat-option>
                   </div>
+                  <div *ngIf="eventForm.controls['classroom'].invalid && (eventForm.controls['classroom'].dirty || eventForm.controls['classroom'].touched)">
+                    <div *ngIf="eventForm.controls['classroom'].errors">
+                      Classroom is required.
+                    </div>
+                  </div>
               </mat-select>
               </mat-form-field>
             </div>
@@ -41,13 +52,18 @@
             <h2>Date/Time</h2>
             <div>
               <input mat-input type="datetime-local" formControlName="startTime" id="start-time">
+              <div *ngIf="eventForm.controls['startTime'].invalid && (eventForm.controls['startTime'].dirty || eventForm.controls['startTime'].touched)">
+                <div *ngIf="eventForm.controls['startTime'].errors">
+                  The date is required.
+                </div>
+              </div>
             </div>
 
           </div>
         </mat-card-content>
         <div class="field-container">
           <mat-card-actions align="start">
-              <button mat-raised-button color="primary">Create</button>
+              <button mat-raised-button color="primary" (ngSubmit)="addEvent(eventForm)" [disabled]="eventForm.pristine || eventForm.invalid">Create</button>
 
           </mat-card-actions>
       </div>

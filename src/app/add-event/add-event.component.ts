@@ -8,6 +8,8 @@ import { PlannerDTO } from '../classes/plannerDTO';
 import { ClassroomService } from '../services/classroom/classroom.service';
 import { CourseService } from '../services/course/course.service';
 import { PlannerService } from '../services/planner/planner.service';
+import { Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-add-event',
@@ -29,9 +31,9 @@ export class AddEventComponent implements OnInit {
     private router: Router) { }
 
   eventForm = this.formBuilder.group({
-    course:[''],
-    classroom:[''],
-    startTime:['']
+    course:['', Validators.required],
+    classroom:['', Validators.required],
+    startTime:['', Validators.required]
     })
 
   public getClassrooms(): void{

@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user/user.service';
 import { User } from '../classes/user';
@@ -13,17 +13,17 @@ import { User } from '../classes/user';
 export class AddUserComponent implements OnInit {
 
   constructor(
-    private formBuilder:FormBuilder, 
+    private formBuilder:FormBuilder,
     private userService: UserService,
     private router: Router){}
 
   userProfileForm = this.formBuilder.group({
-    firstName:[''],
-    lastName:[''],
-    year:[undefined],
-    department:[undefined],
-    section:[undefined],
-    role:['']
+    firstName:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
+    lastName:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
+    year:[undefined, Validators.required],
+    department:[undefined, [Validators.required, Validators.pattern("[A-Za-z]+")]],
+    section:[undefined, [Validators.required, Validators.pattern("[A-Za-z]+")]],
+    role:['', Validators.required]
   })
 
   public addUser(userProfileForm: FormGroup): void{
