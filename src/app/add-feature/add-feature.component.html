@@ -8,7 +8,7 @@
             </mat-card-header>
           </div>
           <!-- Body -->
-
+  
           <mat-card-content>
             <div class="field-container">
               <!-- Name -->
@@ -16,22 +16,18 @@
                 <mat-form-field appearance="fill" class="half-width">
                   <mat-label>Name</mat-label>
                   <input matInput formControlName="name">
-                  <div *ngIf="featureForm.controls['name'].invalid && (featureForm.controls['name'].dirty || featureForm.controls['name'].touched)">
-                    <div *ngIf="featureForm.controls['name'].errors">
-                      Name is required.
-                    </div>
-                  </div>
                 </mat-form-field>
               </div>
-
+  
             </div>
           </mat-card-content>
           <div class="field-container">
             <mat-card-actions align="start">
-                <button mat-raised-button color="primary" (ngSubmit)="addFeature(featureForm)" [disabled]="featureForm.pristine || featureForm.invalid">Create</button>
-
+              <button mat-raised-button color="primary" (ngSubmit)="addFeature(featureForm)" [disabled]="featureForm.pristine || featureForm.invalid">Create</button>
+  
             </mat-card-actions>
         </div>
       </mat-card>
     </div>
   </form>
+  

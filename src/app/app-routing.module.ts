@@ -15,6 +15,8 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { EditClassroomComponent } from './edit-classroom/edit-classroom.component';
 import { AdminGuard } from './guards/admin.guard';
 import { TeacherGuard } from './guards/teacher.guard';
+import { StudentEnrollmentsComponent } from './student-enrollments/student-enrollments.component';
+import { StudentGuard } from './guards/student.guard';
 
 const routes: Routes = [
 
@@ -23,6 +25,7 @@ const routes: Routes = [
     component: AddUserComponent
 
   },
+  {path: 'enrollments', component: StudentEnrollmentsComponent, canActivate: [StudentGuard]},
   {
     path: 'courses', component: CoursesComponent, canActivate: [AdminGuard]
   },
@@ -33,7 +36,7 @@ const routes: Routes = [
     path: 'edit-course', component: EditCourseComponent, canActivate: [AdminGuard]
   },
   {
-    path: '', component: MainContentComponent,
+    path: '', component: MainContentComponent, 
   },
   {
     path: 'add-event', component: AddEventComponent, canActivate: [TeacherGuard]

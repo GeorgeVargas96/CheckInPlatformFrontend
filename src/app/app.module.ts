@@ -36,7 +36,7 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { EditClassroomComponent } from './edit-classroom/edit-classroom.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ClassroomDetailsComponent } from './classroom-details/classroom-details.component';
-
+import { StudentEnrollmentsComponent } from './student-enrollments/student-enrollments.component';
 
 
 
@@ -57,7 +57,8 @@ import { ClassroomDetailsComponent } from './classroom-details/classroom-details
     EditCourseComponent,
     EditClassroomComponent,
     CourseDetailsComponent,
-    ClassroomDetailsComponent
+    ClassroomDetailsComponent,
+    StudentEnrollmentsComponent
   ],
   imports: [
     BrowserModule,

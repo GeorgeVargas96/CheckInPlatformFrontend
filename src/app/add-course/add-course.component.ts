@@ -1,11 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Course } from '../classes/course';
 import { CourseService } from '../services/course/course.service';
-import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-course',
@@ -20,10 +19,10 @@ export class AddCourseComponent implements OnInit {
     private router: Router){}
 
   courseForm = this.formBuilder.group({
-
-    name:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
-    year:['', Validators.required],
-    section:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
+    
+    name:['', [Validators.required, Validators.pattern(/^(?:[a-zA-Z0-9\s]+)?$/)]],
+    year:['', [Validators.required]],
+    section:['', [Validators.required, Validators.pattern(/^(?:[a-zA-Z0-9\s]+)?$/)]],
     // teacher:[''],
   })
 

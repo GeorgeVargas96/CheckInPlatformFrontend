@@ -8,7 +8,7 @@
             </mat-card-header>
           </div>
           <!-- Body -->
-
+  
           <mat-card-content>
             <div class="field-container">
               <!-- Name -->
@@ -16,37 +16,22 @@
                 <mat-form-field appearance="fill" class="half-width">
                   <mat-label>Name</mat-label>
                   <input matInput formControlName="name">
-                  <div *ngIf="classroomForm.controls['name'].invalid && (classroomForm.controls['name'].dirty || classroomForm.controls['name'].touched)">
-                    <div *ngIf="classroomForm.controls['name'].errors">
-                      Name is required.
-                    </div>
-                  </div>
                 </mat-form-field>
               </div>
-
+  
               <!-- Location -->
               <div>
                 <mat-form-field appearance="fill" class="half-width">
                   <mat-label>Location</mat-label>
                   <input matInput formControlName="location">
-                  <div *ngIf="classroomForm.controls['location'].invalid && (classroomForm.controls['location'].dirty || classroomForm.controls['location'].touched)">
-                    <div *ngIf="classroomForm.controls['location'].errors">
-                      Location is required.
-                    </div>
-                  </div>
                 </mat-form-field>
               </div>
-
+              
               <!-- Capacity -->
               <div>
                 <mat-form-field appearance="fill" class="half-width">
                   <mat-label>Capacity</mat-label>
                   <input matInput formControlName="capacity">
-                  <div *ngIf="classroomForm.controls['capacity'].invalid && (classroomForm.controls['capacity'].dirty || classroomForm.controls['capacity'].touched)">
-                    <div *ngIf="classroomForm.controls['capacity'].errors">
-                      Capacity is required.
-                    </div>
-                  </div>
                 </mat-form-field>
               </div>
 
@@ -66,15 +51,16 @@
                   </mat-select>
                 </mat-form-field>
               </div>
-
+  
             </div>
           </mat-card-content>
           <div class="field-container">
             <mat-card-actions align="start">
-                <button mat-raised-button color="primary" (ngSubmit)="addClassroom(classroomForm)" [disabled]="classroomForm.pristine || classroomForm.invalid">Create</button>
-
+              <button mat-raised-button color="primary" (ngSubmit)="addClassroom(classroomForm)" [disabled]="classroomForm.pristine || classroomForm.invalid">Create</button>
+  
             </mat-card-actions>
         </div>
       </mat-card>
     </div>
   </form>
+  

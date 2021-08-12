@@ -15,11 +15,6 @@
               <mat-form-field appearance="fill" class="half-width">
                 <mat-label>First Name</mat-label>
                 <input  matInput formControlName="firstName">
-                <div *ngIf="userProfileForm.controls['firstName'].invalid && (userProfileForm.controls['firstName'].dirty || userProfileForm.controls['firstName'].touched)">
-                  <div *ngIf="userProfileForm.controls['firstName'].errors">
-                    First name is required.
-                  </div>
-                </div>
               </mat-form-field>
             </div>
 
@@ -28,11 +23,6 @@
               <mat-form-field appearance="fill" class="half-width">
                 <mat-label>Last Name</mat-label>
                 <input  matInput formControlName="lastName">
-                <div *ngIf="userProfileForm.controls['lastName'].invalid && (userProfileForm.controls['lastName'].dirty || userProfileForm.controls['lastName'].touched)">
-                  <div *ngIf="userProfileForm.controls['lastName'].errors">
-                    Last name is required.
-                  </div>
-                </div>
               </mat-form-field>
             </div>
 
@@ -46,11 +36,6 @@
                   <mat-option [value]="3">3</mat-option>
                   <mat-option [value]="4">4</mat-option>
               </mat-select>
-                <div *ngIf="userProfileForm.controls['year'].invalid && (userProfileForm.controls['year'].dirty || userProfileForm.controls['year'].touched)">
-                  <div *ngIf="userProfileForm.controls['year'].errors">
-                    Year is required.
-                  </div>
-                </div>
               </mat-form-field>
             </div>
 
@@ -59,11 +44,6 @@
               <mat-form-field appearance="fill" class="half-width">
                 <mat-label>Department</mat-label>
                 <input  matInput formControlName="department">
-                <div *ngIf="userProfileForm.controls['department'].invalid && (userProfileForm.controls['department'].dirty || userProfileForm.controls['department'].touched)">
-                  <div *ngIf="userProfileForm.controls['department'].errors">
-                    Department is required.
-                  </div>
-                </div>
               </mat-form-field>
             </div>
 
@@ -72,11 +52,6 @@
               <mat-form-field appearance="fill" class="half-width">
                 <mat-label>Section</mat-label>
                 <input  matInput formControlName="section">
-                <div *ngIf="userProfileForm.controls['section'].invalid && (userProfileForm.controls['section'].dirty || userProfileForm.controls['section'].touched)">
-                  <div *ngIf="userProfileForm.controls['section'].errors">
-                    Section is required.
-                  </div>
-                </div>
               </mat-form-field>
             </div>
 
@@ -90,11 +65,6 @@
                       <mat-option value="TEACHER">Teacher</mat-option>
                       <mat-option value="ADMIN">Admin</mat-option>
                   </mat-select>
-                  <div *ngIf="userProfileForm.controls['role'].invalid && (userProfileForm.controls['role'].dirty || userProfileForm.controls['role'].touched)">
-                    <div *ngIf="userProfileForm.controls['role'].errors">
-                      Role is required.
-                    </div>
-                  </div>
               </mat-form-field>
             </div>
 
@@ -103,7 +73,7 @@
         </mat-card-content>
         <div class="field-container">
           <mat-card-actions align="start">
-              <button mat-raised-button color="primary" (ngSubmit)="addUser(userProfileForm)" [disabled]="userProfileForm.pristine || userProfileForm.invalid">Create</button>
+              <button mat-raised-button color="primary">Create</button>
 
           </mat-card-actions>
       </div>
