@@ -67,6 +67,7 @@ export class CoursesComponent implements OnInit {
   public openConfirmationDialog(courseId: number, courseName: string): void{
     Swal.fire({
       title: 'Are you sure?',
+      text: 'associated events will be removed',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -77,7 +78,7 @@ export class CoursesComponent implements OnInit {
         this.onDeleteCourse(courseId);
         Swal.fire(
           'Deleted!',
-          courseName + ' has been deleted',
+          courseName + ' has been removed',
           'success'
         )
       }
