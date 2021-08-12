@@ -20,7 +20,7 @@ export class AddFeatureComponent implements OnInit {
   ) { }
 
   public featureForm = this.formBuilder.group({
-    name:['', Validators.required]
+    name:['', [Validators.required, Validators.pattern("[A-Za-z]+")]]
   });
 
   public addFeature(featureForm: FormGroup): void{

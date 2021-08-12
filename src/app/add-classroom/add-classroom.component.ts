@@ -26,8 +26,8 @@ export class AddClassroomComponent implements OnInit {
 
   classroomForm = this.formBuilder.group({
 
-    name:['', Validators.required],
-    location:['', Validators.required],
+    name:['',[Validators.required, Validators.pattern("[A-Za-z]+")]],
+    location:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
     capacity:['', [Validators.required, Validators.pattern("^[0-9]*$")]],
     features:[[]]
     })

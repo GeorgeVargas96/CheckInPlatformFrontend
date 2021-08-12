@@ -21,9 +21,9 @@ export class AddCourseComponent implements OnInit {
 
   courseForm = this.formBuilder.group({
 
-    name:['', Validators.required],
+    name:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
     year:['', Validators.required],
-    section:['', Validators.required],
+    section:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
     // teacher:[''],
   })
 

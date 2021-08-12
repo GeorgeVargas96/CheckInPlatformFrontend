@@ -42,7 +42,7 @@ const routes: Routes = [
     path: 'classrooms', component: ClassroomsComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'add-classroom', component: AddClassroomComponent, canActivate: [AdminGuard]
+    path: 'add-classroom', component: AddClassroomComponent
   },
   {
     path: 'edit-classroom', component: EditClassroomComponent, canActivate: [AdminGuard]

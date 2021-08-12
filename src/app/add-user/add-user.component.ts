@@ -18,11 +18,11 @@ export class AddUserComponent implements OnInit {
     private router: Router){}
 
   userProfileForm = this.formBuilder.group({
-    firstName:['', Validators.required],
-    lastName:['', Validators.required],
+    firstName:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
+    lastName:['', [Validators.required, Validators.pattern("[A-Za-z]+")]],
     year:[undefined, Validators.required],
-    department:[undefined, Validators.required],
-    section:[undefined, Validators.required],
+    department:[undefined, [Validators.required, Validators.pattern("[A-Za-z]+")]],
+    section:[undefined, [Validators.required, Validators.pattern("[A-Za-z]+")]],
     role:['', Validators.required]
   })
 
